@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+<!--    <nav class="navbar navbar-dark bg-dark">-->
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <form class="form-inline">
+    <button class="btn btn-outline-success" type="button">Online Fashion Blogs</button>
+      									{% if user.is_authenticated %}
+									<li>Hai {{user.username}}</li>
+									<li><a href="accounts/logout">logout</a></li>
+									{% else %}
+									<li><a href="accounts/register">register</a></li>
+									<li><a href="accounts/login">login</a></li>
+									{% endif %}
+
+      <li class="nav-item">
+      </li>
+
+  </form>
+</nav>
+</head>
+<body>
+{% block body %}
+{% endblock %}
+</body>
+</html>
